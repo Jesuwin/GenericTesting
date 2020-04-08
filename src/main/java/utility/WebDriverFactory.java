@@ -16,7 +16,7 @@ public class WebDriverFactory {
 		setWebDriver();
 	}
 	
-	public  WebDriverFactory getInstance()
+	public static  WebDriverFactory getInstance()
 	{
 		if(driver_instance==null)
 			driver_instance=new WebDriverFactory();

@@ -17,26 +17,13 @@ import utility.MyException;
 
 public class BasePage {
 
-	 private static final int timeout = 5;
+	 
 	
 	protected WebDriver driver;
     protected WebDriverWait wait;
     ConfigProperties prop=new ConfigProperties();
     
-    //constructor
-    public BasePage(WebDriver driver) throws MyException {
-    	if(driver!=null)
-    	{
-
-        this.driver = driver;
-        wait = new WebDriverWait(driver, timeout);
-        PageFactory.initElements(driver, this);
-    }
-    	else
-    	{
-    		throw new MyException("Singleton browser instance isn't created.");
-    	}
-    }
+   
     
     //Get the element
     protected WebElement getWebElement(By locator) throws MyException
@@ -70,15 +57,12 @@ public class BasePage {
     }
     
     //Go to the specified url
-    public void navigateToWebsite() 
+    protected void navigateToWebsite(String url) 
     {
-    	String url=null;
-		try {
-			url = prop.fetchPropertyFromFile("url");
-		} catch (MyException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+		
+		
+		
     	driver.get(url);
     	
     }
@@ -122,7 +106,7 @@ public class BasePage {
    
  //wait til Page Load
    
-   public void waitTillPageLoad(int time)
+   protected void waitTillPageLoad(int time)
    {
 	   driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
    }
@@ -130,29 +114,30 @@ public class BasePage {
    
    //Go forward
    
-   public void navigateForward()
+   protected void navigateForward()
    {
 	   driver.navigate().forward();
    }
     
    //Go back
-    public void navigateBack()
+    protected void navigateBack()
     {
     	driver.navigate().back();
     }
     
     //refresh
     
-    public void refresh()
+    protected void refresh()
     {
     	driver.navigate().refresh();
     }
     
     //Click a webelement
     
-    protected void clickElement(WebElement element) throws MyException
+    protected void clickElement(By locator) throws MyException
     {
     	try {
+    		WebElement element=getWebElement(locator);
     		boolean elementIsClickable = element.isEnabled();
     		while (elementIsClickable)
     		{
@@ -211,6 +196,20 @@ public class BasePage {
     	action.moveToElement(element).build().perform();
     	
     }
+    //send keys
+    
+    protected void type(By locator,String value)
+    {
+    	WebElement element=null;
+		try {
+			element = getWebElement(locator);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	element.sendKeys(value);
+    }
+    
     
     
 }
