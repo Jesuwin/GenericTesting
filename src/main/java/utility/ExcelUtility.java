@@ -2,111 +2,100 @@ package utility;
 
 import java.io.File;
 import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
+
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import config.ConfigProperties;
 
 public class ExcelUtility {
+	private static XSSFSheet ExcelWSheet;
 
-	Workbook book=null;
-	Row row=null;
-	FileInputStream inputStream=null;
-	File file =   null;
+	private static XSSFWorkbook ExcelWBook;
+
+	private static FileInputStream ExcelFile;
 	
-	ConfigProperties prop=new ConfigProperties();
+
+
+
+public static void setExcelFile(String FileName,String SheetName) throws Exception {
+
+	   try {
+
+			// Open the Excel file
+
+			ExcelFile = new FileInputStream(FileName);
+			
+
+			// Access the required test data sheet
+
+			ExcelWBook = new XSSFWorkbook(ExcelFile);
+
+			ExcelWSheet = ExcelWBook.getSheet(SheetName);
+
+			} catch (Exception e){
+
+				throw (e);
+
+			}
+
+	}
+
+public static Object[][] getTableArray()    throws Exception
+
+{   
+
+   Object[][] tabArray = null;
+
+   try{
+	   // Access the required test data sheet
+
+	 
+	   int lastRowNum=ExcelWSheet.getLastRowNum();
+	   int lastCellNum=ExcelWSheet.getRow(0).getLastCellNum();
+	   tabArray=new Object[lastRowNum][1];
+	   for (int i = 0; i < lastRowNum; i++) {
+		      Map<Object, Object> datamap = new HashMap<>();
+		      for (int j = 0; j < lastCellNum; j++) {
+		        datamap.put(ExcelWSheet.getRow(0).getCell(j).toString(), ExcelWSheet.getRow(i+1).getCell(j).toString());
+		      }
+		      tabArray[i][0] = datamap;
+
+		    }
+		    
+		}
+   catch(Exception e)
+   {
+	   
+   }
+return tabArray;
+
+
+}
+
 
 	
-	//Initalise workbook
 	
-	public Workbook initWorkbook() throws MyException
-	{
-		try {
-		file=new File(prop.fetchPropertyFromFile("dataExcelFileName"));
-		inputStream = new FileInputStream(file);
-		book= getAppropriateWorkBook(inputStream);
-		
-		}
-	catch(FileNotFoundException e)
-		{
-		throw new MyException("Unable to load Excel File.");
-		}
-		
-		return book;
-	}
 	
-	//Tear down
-	public void tearDown()
-	{
-		try {
-			inputStream.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	//check if the fileExtension is xlsx or xls
-	
-	private Workbook  getAppropriateWorkBook(FileInputStream is)
-	{
-		Workbook book1=null;
-		String fileName=prop.fetchPropertyFromFile("dataExcelFileName");
-		String fileExtensionName=fileName.substring(fileName.indexOf("."));
-		
-		if(fileExtensionName.equals(".xlsx"))
-		{
-			book1=new XSSFWorkbook(is);
-		}
-		else if(fileExtensionName.equals(".xls"))
-		{
-			book1=new HSSFWorkbook(is);
-		}
-		
-		return book1; 
-	}
-	
-	//Get Sheet by name
-	
-	public Sheet getSheet(Workbook book)
-	{
-		try {
-			Sheet newSheet=book.getSheet(prop.fetchPropertyFromFile("sheetname"));
-		} catch (MyException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-		
-	}
-	
-	//Write operations into Excel
-	
-	public void writeIntoExcel(Workbook book, File file)
-	{
-		FileOutputStream opStream=null;
-		try {
-			opStream=new FileOutputStream(file);
-			
-				book.write(opStream);
-			
-			
-			
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
+
+
 	}
 	
 	

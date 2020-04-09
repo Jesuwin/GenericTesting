@@ -9,23 +9,34 @@ import Entity.LoginEntity;
 import base.BasePage;
 import dataprovider.MyDataProvider;
 import pageobjects.LoginPageObjects;
+import utility.MyException;
 import utility.WebDriverFactory;
 
 public class LoginPage extends BasePage implements LoginPageObjects{
+
+	public LoginPage(WebDriver driver) throws MyException {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 
 	WebDriverFactory fac=WebDriverFactory.getInstance();
 	WebDriver driver=fac.getDriver();
 	
 	
-	public void userLogin()
+	public DashboardPage userLogin() throws MyException
 	{
+		try {
 		
-	MyDataProvider prov=new MyDataProvider();	
-	List<LoginEntity> list=new LinkedList();
-	
-	list=prov.ReadDataFromCSV();
 	
 	
+	
+		
+	} catch (MyException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		return new DashboardPage(driver);
 		
 	}
 	

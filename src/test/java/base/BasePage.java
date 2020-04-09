@@ -19,11 +19,18 @@ public class BasePage {
 
 	 
 	
-	protected WebDriver driver;
+	protected WebDriver driver1;
     protected WebDriverWait wait;
     ConfigProperties prop=new ConfigProperties();
     
-   
+    public BasePage(WebDriver driver) throws MyException {
+		if (driver != null) {
+			driver1 = driver;
+			wait = new WebDriverWait(driver, 10);
+		} else {
+			throw new MyException("Singleton browser Instance Is Null");
+		}
+	}
     
     //Get the element
     protected WebElement getWebElement(By locator) throws MyException
@@ -31,7 +38,7 @@ public class BasePage {
     	WebElement element=null;
     	
     	try {
-    		element = driver.findElement(locator);
+    		element = driver1.findElement(locator);
     	}
     	catch(Exception e)
     	{
@@ -47,7 +54,7 @@ public class BasePage {
     {
     	List<WebElement> list=null;
     	try {
-    	list=driver.findElements(locator);
+    	list=driver1.findElements(locator);
     	}
     	catch(Exception e)
     	{
@@ -63,14 +70,14 @@ public class BasePage {
 		
 		
 		
-    	driver.get(url);
+    	driver1.get(url);
     	
     }
     
     //Maximize the window
     protected void maximizeBrowser()
     {
-    	driver.manage().window().maximize();
+    	driver1.manage().window().maximize();
     }
     
     //Get the title of the page
@@ -78,7 +85,7 @@ public class BasePage {
     {
     	String title=null;
     	
-    	title=driver.getTitle();
+    	title=driver1.getTitle();
     
     	if(title==null)
     	throw new MyException("Unable to retrieve the page title");
@@ -92,7 +99,7 @@ public class BasePage {
     
    protected void closeDriver()
    {
-	   driver.quit();
+	   driver1.quit();
 	  
    }
    
@@ -108,7 +115,7 @@ public class BasePage {
    
    protected void waitTillPageLoad(int time)
    {
-	   driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
+	   driver1.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
    }
    
    
@@ -116,20 +123,20 @@ public class BasePage {
    
    protected void navigateForward()
    {
-	   driver.navigate().forward();
+	   driver1.navigate().forward();
    }
     
    //Go back
     protected void navigateBack()
     {
-    	driver.navigate().back();
+    	driver1.navigate().back();
     }
     
     //refresh
     
     protected void refresh()
     {
-    	driver.navigate().refresh();
+    	driver1.navigate().refresh();
     }
     
     //Click a webelement
@@ -162,7 +169,7 @@ public class BasePage {
     
     protected void dragAndDrop(WebElement fromElement,WebElement toElement)
     {
-    	Actions action=new Actions(driver);
+    	Actions action=new Actions(driver1);
     	action.dragAndDrop(fromElement, toElement);
     }
     
@@ -192,7 +199,7 @@ public class BasePage {
     protected void mouseOver(WebElement element)
     {
     	
-    	Actions action=new Actions(driver);
+    	Actions action=new Actions(driver1);
     	action.moveToElement(element).build().perform();
     	
     }

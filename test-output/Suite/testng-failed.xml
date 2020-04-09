@@ -5,7 +5,7 @@
     <classes>
       <class name="testcases.test">
         <methods>
-          <include name="test"/>
+          <include name="f"/>
         </methods>
       </class> <!-- testcases.test -->
     </classes>

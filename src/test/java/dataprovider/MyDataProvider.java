@@ -1,58 +1,39 @@
 package dataprovider;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+import org.testng.annotations.DataProvider;
 
-import Entity.LoginEntity;
 import config.ConfigProperties;
+import utility.ExcelUtility;
 import utility.MyException;
+
 
 public class MyDataProvider {
 
-	
-	
-	ConfigProperties prop=new ConfigProperties();
-	
-	public List<LoginEntity> ReadDataFromCSV() {
-		BufferedReader br=null;
-		String line="";
-		String cvsSplitBy=",";
-		String csvFile;
-		String uname=null;
-		String pass=null;
-		List<LoginEntity> list=new LinkedList();
-		LoginEntity logindetail=new LoginEntity();
+	ExcelUtility util=null;
+	ConfigProperties prop=null;
+	@DataProvider
+	public Object[][] Authentication() 
+	{
+		Object[][] obj=null;
+		prop=new ConfigProperties();
+		util=new ExcelUtility();
 		try {
-			csvFile = prop.fetchPropertyFromFile("csvfilename");
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "logindetails");
+			
+		
+		obj=ExcelUtility.getTableArray();
 		
 		
-			 br = new BufferedReader(new FileReader(csvFile));
-			  while ((line = br.readLine()) != null)
-			  
-			  {
-				  String[] data = line.split(cvsSplitBy);
-				  uname=data[0];
-				  pass=data[1];
-				  logindetail.setUsername(uname);
-				  logindetail.setPassword(pass);
-				  list.add(logindetail);
-				  
-			  }
-		}
-		catch(MyException e) {
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-		}
+		return obj;
 		
-		return list;
 	}
-	
 	
 	
 }
