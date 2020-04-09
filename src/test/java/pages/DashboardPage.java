@@ -1,14 +1,13 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 import base.BasePage;
+import pageobjects.DashBoardPageObjects;
 import utility.MyException;
 
 public class DashboardPage extends BasePage implements DashBoardPageObjects {
 
-	public DashboardPage(WebDriver driver) throws MyException {
-		super(driver);
+	public DashboardPage() throws MyException {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 	

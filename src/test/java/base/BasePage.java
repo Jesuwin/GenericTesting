@@ -4,16 +4,19 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import config.ConfigProperties;
 import utility.MyException;
+import utility.Snapshot;
+import utility.WebDriverFactory;
+
 
 public class BasePage {
 
@@ -21,21 +24,38 @@ public class BasePage {
 	
 	protected WebDriver driver1;
     protected WebDriverWait wait;
-    ConfigProperties prop=new ConfigProperties();
+    public ConfigProperties prop;
+    protected JavascriptExecutor js;
+    WebDriverFactory fac;
+    public Snapshot snap;
+    private WebElement element;
+    public BasePage()  {
+			fac=WebDriverFactory.getInstance();
+			driver1 =fac.getDriver();
+			wait = new WebDriverWait(driver1, TestUtil.WEBDRIVER_WAIT_TIME);
+			
+			prop=new ConfigProperties();
+			snap=new Snapshot(driver1);
+		} 
+	
     
-    public BasePage(WebDriver driver) throws MyException {
-		if (driver != null) {
-			driver1 = driver;
-			wait = new WebDriverWait(driver, 10);
-		} else {
-			throw new MyException("Singleton browser Instance Is Null");
+   
+  //Go to the specified url from property file
+    protected void navigateToWebsite() 
+    {
+    	try {
+			driver1.get(prop.fetchPropertyFromFile("url"));
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-	}
+    	
+    }
     
     //Get the element
     protected WebElement getWebElement(By locator) throws MyException
     {
-    	WebElement element=null;
+    	
     	
     	try {
     		element = driver1.findElement(locator);
@@ -63,16 +83,20 @@ public class BasePage {
     	return list;
     }
     
-    //Go to the specified url
-    protected void navigateToWebsite(String url) 
-    {
-    	
-		
-		
-		
-    	driver1.get(url);
-    	
-    }
+    
+    public void clickOnUsingJs(WebElement element) {
+    	JavascriptExecutor executor = (JavascriptExecutor)driver1;
+    	executor.executeScript("arguments[0].click();", element);
+    	}
+    	public void type(String text, WebElement element) {
+    		
+    		
+    		((JavascriptExecutor) driver1).executeScript("arguments[0].scrollIntoView(true);", element);
+    		element.clear();
+    		element.sendKeys(text);
+    		
+    		
+    	}
     
     //Maximize the window
     protected void maximizeBrowser()
@@ -102,7 +126,12 @@ public class BasePage {
 	   driver1.quit();
 	  
    }
-   
+   //get webdriver
+
+   protected WebDriver getDriver()
+   {
+	   return driver1;
+   }
    
    //wait for a webelement
    
@@ -113,9 +142,9 @@ public class BasePage {
    
  //wait til Page Load
    
-   protected void waitTillPageLoad(int time)
+   protected void waitTillPageLoad()
    {
-	   driver1.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
+	   driver1.manage().timeouts().pageLoadTimeout(TestUtil.PAGELOAD_WAIT_TIME, TimeUnit.SECONDS);
    }
    
    
@@ -141,20 +170,11 @@ public class BasePage {
     
     //Click a webelement
     
-    protected void clickElement(By locator) throws MyException
+    protected void clickOn(By locator) throws MyException
     {
-    	try {
-    		WebElement element=getWebElement(locator);
-    		boolean elementIsClickable = element.isEnabled();
-    		while (elementIsClickable)
-    		{
+    	element=getWebElement(locator);
     			element.click();
-    		}
-    		}
-    	catch(Exception e)
-    	{
-    		throw new MyException("Element is not clickable");
-    	}
+    		
     }
     
     //clear a textfield

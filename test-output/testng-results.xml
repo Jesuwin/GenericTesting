@@ -2,12 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-09T20:21:20Z" name="Default suite" finished-at="2020-04-09T20:21:27Z" duration-ms="7368">
+  <suite started-at="2020-04-09T22:42:43Z" name="Default suite" finished-at="2020-04-09T22:42:51Z" duration-ms="7873">
     <groups>
     </groups>
-    <test started-at="2020-04-09T20:21:20Z" name="Default test" finished-at="2020-04-09T20:21:27Z" duration-ms="7368">
+    <test started-at="2020-04-09T22:42:43Z" name="Default test" finished-at="2020-04-09T22:42:51Z" duration-ms="7873">
       <class name="testcases.test1">
-        <test-method signature="f(java.util.Map)[pri:0, instance:testcases.test1@2c1b194a]" started-at="2020-04-09T20:21:20Z" name="f" data-provider="Authentication" finished-at="2020-04-09T20:21:27Z" duration-ms="7047" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@201a4587]" started-at="2020-04-09T22:42:43Z" name="setup" finished-at="2020-04-09T22:42:45Z" duration-ms="2216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest(java.util.Map)[pri:0, instance:testcases.test1@201a4587]" started-at="2020-04-09T22:42:45Z" name="loginTest" data-provider="Authentication" finished-at="2020-04-09T22:42:51Z" duration-ms="5334" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,7 +21,7 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
+        </test-method> <!-- loginTest -->
       </class> <!-- testcases.test1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

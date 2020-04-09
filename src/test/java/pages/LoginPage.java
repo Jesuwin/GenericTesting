@@ -1,42 +1,42 @@
 package pages;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 
-import Entity.LoginEntity;
 import base.BasePage;
-import dataprovider.MyDataProvider;
 import pageobjects.LoginPageObjects;
 import utility.MyException;
-import utility.WebDriverFactory;
 
-public class LoginPage extends BasePage implements LoginPageObjects{
+public class LoginPage extends BasePage implements LoginPageObjects  {
 
-	public LoginPage(WebDriver driver) throws MyException {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	WebDriverFactory fac=WebDriverFactory.getInstance();
-	WebDriver driver=fac.getDriver();
 	
 	
-	public DashboardPage userLogin() throws MyException
+public LoginPage()
+{
+	super();
+	
+}
+
+	
+	
+	public void userLogin(String username,String password) 
 	{
 		try {
+		navigateToWebsite();
 		
-	
-	
-	
+		type(userTxtField,username);
+		type(passTxtField,password);
+		snap.capture("loginpage");
+	clickOn(loginBtn);
 		
-	} catch (MyException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-		return new DashboardPage(driver);
+			
+		} catch (IOException | MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 	
