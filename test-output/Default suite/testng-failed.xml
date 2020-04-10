@@ -5,7 +5,8 @@
     <classes>
       <class name="testcases.test1">
         <methods>
-          <include name="assignPageTest" invocation-numbers="0"/>
+          <include name="assignPageTest"/>
+          <include name="PimPageTest"/>
           <include name="loginPageTest"/>
           <include name="setup"/>
           <include name="DashBoardTest"/>

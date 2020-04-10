@@ -53,10 +53,18 @@ public class test1 extends Base {
 		String toDate=(String) map.get("todate");
 		String duration=(String) map.get("duration");
 		String comm=(String) map.get("comment");
-		System.out.println(comm);
+		String parDay=(String) map.get("partialday");
 		
-		assignLeave.fillAssignLeaveForm(emp, leave, fromDate, toDate, duration, comm);
+		
+		pim=assignLeave.fillAssignLeaveForm(emp, leave, fromDate, toDate, duration, comm,parDay);
 	}
 	
+	@Test(dataProvider="PIMProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="assignPageTest")
+	public void PimPageTest(Map<Object,Object> map)
+	{
+		pim.navigateToPIMModule();
+		String ename=(String) map.get("empToSearch");
+		pim.findEmpDetail(ename);
+	}
 	
 	}

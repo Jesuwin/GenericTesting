@@ -26,7 +26,8 @@ public LoginPage()
 			waitTillElementFound(userTxtField);
 		type(userTxtField,username);
 		type(passTxtField,password);
-		snap.capture("loginpage");
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
 	clickOn(loginBtn);
 		
 			

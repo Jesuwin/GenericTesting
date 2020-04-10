@@ -33,12 +33,14 @@ public class BasePage extends Base{
 			
 			prop=new ConfigProperties();
 			snap=new Snapshot(driver1);
+			maximizeBrowser();
 			
 		} 
 	
+   
     
    
-  
+ 
   //Go to the specified url from property file
     protected void navigateToWebsite() 
     {
@@ -187,11 +189,28 @@ public class BasePage extends Base{
     
     //clear a textfield
     
-    protected void clearTextField(WebElement element)
+    protected void clear(By locator)
     {
+    	try {
+			element=getWebElement(locator);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	element.clear();
     }
     
+    //thread sleep
+    
+    protected void threadSleep()
+    {
+    	try {
+			Thread.sleep(THREAD_SLEEP_WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     
     //Drag and drop action 
     
@@ -245,12 +264,17 @@ try {
     
     //mouse hover
     
-    protected void mouseOver(WebElement element)
+    protected void mouseOver(By locator)
     {
-    	
+    	try {
+			element=getWebElement(locator);
+		
     	Actions action=new Actions(driver1);
     	action.moveToElement(element).build().perform();
-    	
+    	} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     
@@ -279,7 +303,18 @@ try {
 		}
     	element.sendKeys(value);
     }
-    
+    //Check if an element is visible
+    protected boolean checkElementVisible(By locator)
+    {
+    	try {
+			element=getWebElement(locator);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	return element.isDisplayed();
+    }
     
     
 }

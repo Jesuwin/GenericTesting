@@ -16,7 +16,8 @@ public class DashboardPage extends BasePage implements DashBoardPageObjects {
 	public AssignLeavePage clickAssignLeave()
 	{try {
 		waitTillElementFound(assignLeaveLink);
-		snap.capture("dashboard");
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
 			clickOn(assignLeaveLink);
 			
 			

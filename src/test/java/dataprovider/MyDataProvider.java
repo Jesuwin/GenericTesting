@@ -17,8 +17,8 @@ public class MyDataProvider extends Base{
 	public Object[][] Authentication() 
 	{
 		
-		prop=new ConfigProperties();
 		
+		prop=new ConfigProperties();
 		try {
 			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "logindetails");
 			
@@ -59,5 +59,24 @@ prop=new ConfigProperties();
 		return obj;
 	}
 	
+	@DataProvider
+	public Object[][] PIMProvider()
+	{
+		try {
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "pim");
+			
+		
+		obj=ExcelUtility.getTableArray();
+		
+		
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return obj;
+	}
 	
 }

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Apr 10 08:09:32 IST 2020</td>
+<td>Started on:</td><td>Fri Apr 10 14:00:22 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>17 seconds (17173 ms)</td>
+<tr><td>Total time:</td><td>24 seconds (24746 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,34 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testcases.test1.assignPageTest()'><b>assignPageTest</b><br>Test class: testcases.test1<br>Parameters: {empname=John Smith, duration=Full Day, leavetype=Vacation US , todate=2020-06-01, comment=Vacation, fromdate=2020-05-02}</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Vacation US 
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;JESUWIN&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
-	at base.BasePage.selectElementByVisibleText(BasePage.java:226)
-	at pages.AssignLeavePage.fillAssignLeaveForm(AssignLeavePage.java:21)
-	at testcases.test1.assignPageTest(test1.java:58)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1846568576", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1846568576'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Vacation US 
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;JESUWIN&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
-	at base.BasePage.selectElementByVisibleText(BasePage.java:226)
-	at pages.AssignLeavePage.fillAssignLeaveForm(AssignLeavePage.java:21)
-	at testcases.test1.assignPageTest(test1.java:58)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+<td title='testcases.test1.PimPageTest()'><b>PimPageTest</b><br>Test class: testcases.test1</td>
+<td><div><pre>org.testng.TestNGException: 
+Data Provider public java.lang.Object[][] dataprovider.MyDataProvider.PIMProvider() returned a null value
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1609754699", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1609754699'><pre>org.testng.TestNGException: 
+Data Provider public java.lang.Object[][] dataprovider.MyDataProvider.PIMProvider() returned a null value
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:133)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:706)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 	at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -122,7 +105,7 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>testcases.test1@55634720</td></tr>
+<td>testcases.test1@4b0d79fc</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -134,13 +117,18 @@ Driver info: driver.version: unknown
 <tr>
 <td title='testcases.test1.DashBoardTest()'><b>DashBoardTest</b><br>Test class: testcases.test1</td>
 <td></td>
+<td>1</td>
+<td>testcases.test1@4b0d79fc</td></tr>
+<tr>
+<td title='testcases.test1.assignPageTest()'><b>assignPageTest</b><br>Test class: testcases.test1<br>Parameters: {empname=John Smith, duration=Full Day, leavetype=Vacation US, todate=2020-06-01, partialday=All Days, comment=Vacation, fromdate=2020-05-02}</td>
+<td></td>
 <td>4</td>
-<td>testcases.test1@55634720</td></tr>
+<td>testcases.test1@4b0d79fc</td></tr>
 <tr>
 <td title='testcases.test1.loginPageTest()'><b>loginPageTest</b><br>Test class: testcases.test1<br>Parameters: {uname=Admin, pass=admin123}</td>
 <td></td>
-<td>9</td>
-<td>testcases.test1@55634720</td></tr>
+<td>15</td>
+<td>testcases.test1@4b0d79fc</td></tr>
 </table><p>
 </body>
 </html>

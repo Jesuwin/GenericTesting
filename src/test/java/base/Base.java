@@ -10,9 +10,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import config.ConfigProperties;
+import dataprovider.MyDataProvider;
 import pages.AssignLeavePage;
 import pages.DashboardPage;
 import pages.LoginPage;
+import pages.PIMPage;
+import utility.ExcelUtility;
 import utility.Snapshot;
 import utility.WebDriverFactory;
 
@@ -20,6 +23,7 @@ public class Base {
 	//times
 	public static int WEBDRIVER_WAIT_TIME=10;
 	public static int PAGELOAD_WAIT_TIME=10;
+	public static int THREAD_SLEEP_WAIT_TIME=1000;
 	
 	
 	//pages
@@ -27,6 +31,7 @@ public class Base {
 	protected DashboardPage dashboard;
 	protected BasePage base;
 	protected AssignLeavePage assignLeave;
+	protected PIMPage pim;
 	
 	
 	//dp
@@ -36,13 +41,17 @@ public class Base {
     protected WebDriverWait wait;
     protected ConfigProperties prop;
     protected JavascriptExecutor js;
-    WebDriverFactory fac;
+    protected WebDriverFactory fac;
     protected Snapshot snap;
     protected WebElement element;
-    JavascriptExecutor executor ;
+    protected JavascriptExecutor executor ;
     protected Robot rob;
+    protected MyDataProvider dataprov;
+    protected ExcelUtility excelutil;
+    
 
-    List<WebElement> list;
-    String title;
-    Select select;
+    protected List<WebElement> list;
+    protected String title;
+    protected Select select;
+    protected String className;
 }
