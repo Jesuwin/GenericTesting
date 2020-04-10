@@ -5,20 +5,22 @@ import java.util.Map;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import base.Base;
 import base.BasePage;
 import dataprovider.MyDataProvider;
+import pages.AssignLeavePage;
 import pages.LoginPage;
+import utility.MyException;
 
-public class test1  {
+public class test1 extends Base {
 	
-	BasePage page;
-	LoginPage login;
+	
 	
 	
 	@BeforeMethod
 	public void setup()
 	{
-		page=new BasePage();
+		
 		login=new LoginPage();
 		
 	}
@@ -27,15 +29,34 @@ public class test1  {
 	
 	
 	@Test(dataProvider="Authentication", dataProviderClass = MyDataProvider.class)
-	public void loginTest(Map<Object, Object> map)
-	{
-		String username=(String) map.get("uname");
-		String password=(String) map.get("pass");
-		
-	login.userLogin(username, password);
+	public void loginPageTest(Map<Object, Object> map) 
+	{String username=(String) map.get("uname");
+	String password=(String) map.get("pass");
+	
+
+	dashboard=login.userLogin(username, password);
 		
 	}
 
+	@Test(dependsOnMethods="loginPageTest")
+	public void DashBoardTest()
+	{
+		assignLeave=dashboard.clickAssignLeave();
+	}
+
+	@Test(dataProvider="AssignLeaveProvider",dataProviderClass=MyDataProvider.class,dependsOnMethods="DashBoardTest")
+	public void assignPageTest(Map<Object,Object> map)
+	{
+		String emp=(String) map.get("empname");
+		String leave=(String) map.get("leavetype");
+		String fromDate=(String) map.get("fromdate");
+		String toDate=(String) map.get("todate");
+		String duration=(String) map.get("duration");
+		String comm=(String) map.get("comment");
+		System.out.println(comm);
+		
+		assignLeave.fillAssignLeaveForm(emp, leave, fromDate, toDate, duration, comm);
+	}
 	
 	
 	}

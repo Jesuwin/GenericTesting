@@ -38,10 +38,11 @@ public class Snapshot {
 	      }
 	      
 	      fileName=capturename+stamp.getCurrentTimestamp();
-	      System.out.println(fileName);
+	    
 	      File destFile=new File("Screenshots/"+fileName+".png");
 	      //FileUtils.copyFile(srcFile,destFile);
 	      FileHandler.copy(srcFile, destFile);
+	     
 	      
 	       
 	               

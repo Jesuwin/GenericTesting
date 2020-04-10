@@ -1,5 +1,8 @@
 package base;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -18,37 +21,36 @@ import utility.Snapshot;
 import utility.WebDriverFactory;
 
 
-public class BasePage {
+public class BasePage extends Base{
 
 	 
 	
-	protected WebDriver driver1;
-    protected WebDriverWait wait;
-    public ConfigProperties prop;
-    protected JavascriptExecutor js;
-    WebDriverFactory fac;
-    public Snapshot snap;
-    private WebElement element;
+	
     public BasePage()  {
 			fac=WebDriverFactory.getInstance();
 			driver1 =fac.getDriver();
-			wait = new WebDriverWait(driver1, TestUtil.WEBDRIVER_WAIT_TIME);
+			wait = new WebDriverWait(driver1, Base.WEBDRIVER_WAIT_TIME);
 			
 			prop=new ConfigProperties();
 			snap=new Snapshot(driver1);
+			
 		} 
 	
     
    
+  
   //Go to the specified url from property file
     protected void navigateToWebsite() 
     {
     	try {
 			driver1.get(prop.fetchPropertyFromFile("url"));
-		} catch (MyException e) {
+			Thread.sleep(2000);
+		} catch (MyException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	
+    
     	
     }
     
@@ -72,7 +74,7 @@ public class BasePage {
     
     protected List<WebElement> GetSubWebElements(By locator) throws MyException
     {
-    	List<WebElement> list=null;
+    
     	try {
     	list=driver1.findElements(locator);
     	}
@@ -85,7 +87,7 @@ public class BasePage {
     
     
     public void clickOnUsingJs(WebElement element) {
-    	JavascriptExecutor executor = (JavascriptExecutor)driver1;
+    	executor= (JavascriptExecutor)driver1;
     	executor.executeScript("arguments[0].click();", element);
     	}
     	public void type(String text, WebElement element) {
@@ -107,7 +109,7 @@ public class BasePage {
     //Get the title of the page
     protected String getPageTitle() throws MyException
     {
-    	String title=null;
+    	
     	
     	title=driver1.getTitle();
     
@@ -135,8 +137,14 @@ public class BasePage {
    
    //wait for a webelement
    
-   protected void waitTillElementFound(WebElement element, int time)
+   protected void waitTillElementFound(By locator)
    {
+	   try {
+		element = getWebElement(locator);
+	} catch (MyException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	   wait.until(ExpectedConditions.visibilityOf(element));
    }
    
@@ -144,7 +152,7 @@ public class BasePage {
    
    protected void waitTillPageLoad()
    {
-	   driver1.manage().timeouts().pageLoadTimeout(TestUtil.PAGELOAD_WAIT_TIME, TimeUnit.SECONDS);
+	   driver1.manage().timeouts().pageLoadTimeout(Base.PAGELOAD_WAIT_TIME, TimeUnit.SECONDS);
    }
    
    
@@ -195,22 +203,43 @@ public class BasePage {
     
     //Select methods
     
-    protected void selectElementByValue(WebElement element,String value)
+    protected void selectElementByValue(By locator,String value)
     {
-    	Select select = new Select(element);
-    	select.selectByValue(value);
+    	try {
+			element=getWebElement(locator);
+		
+    	select=new Select(element);
+    	select.selectByValue(value);} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     
-    protected void selectElementByVisibleText(WebElement element,String text)
+    protected void selectElementByVisibleText(By locator,String text)
     {
-    	Select select = new Select(element);
+try {
+	element=getWebElement(locator);
+
+		
+    	select=new Select(element);
     	select.selectByVisibleText(text);
+} catch (MyException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
     }
     
-    protected void selectElementByIndex(WebElement element,int index)
+    protected void selectElementByIndex(By locator,int index)
     {
-    	Select select = new Select(element);
+    	try {
+    		element=getWebElement(locator);
+    	} catch (MyException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    			
+    	    	select=new Select(element);
     	select.selectByIndex(index);
     }
     
@@ -223,11 +252,25 @@ public class BasePage {
     	action.moveToElement(element).build().perform();
     	
     }
-    //send keys
     
+    
+    protected void pressEnter()
+    {
+    	try {
+			rob=new Robot();
+			rob.keyPress(KeyEvent.VK_ENTER);
+			rob.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+    
+    //send keys
     protected void type(By locator,String value)
     {
-    	WebElement element=null;
+    
 		try {
 			element = getWebElement(locator);
 		} catch (MyException e) {

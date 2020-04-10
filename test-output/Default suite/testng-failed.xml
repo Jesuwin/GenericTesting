@@ -5,7 +5,10 @@
     <classes>
       <class name="testcases.test1">
         <methods>
-          <include name="f" invocation-numbers="0"/>
+          <include name="assignPageTest" invocation-numbers="0"/>
+          <include name="loginPageTest"/>
+          <include name="setup"/>
+          <include name="DashBoardTest"/>
         </methods>
       </class> <!-- testcases.test1 -->
     </classes>

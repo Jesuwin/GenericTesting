@@ -2,9 +2,6 @@ package pages;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.PageFactory;
-
 import base.BasePage;
 import pageobjects.LoginPageObjects;
 import utility.MyException;
@@ -21,11 +18,12 @@ public LoginPage()
 
 	
 	
-	public void userLogin(String username,String password) 
+	public DashboardPage userLogin(String username,String password)
 	{
 		try {
-		navigateToWebsite();
 		
+			navigateToWebsite();
+			waitTillElementFound(userTxtField);
 		type(userTxtField,username);
 		type(passTxtField,password);
 		snap.capture("loginpage");
@@ -36,6 +34,8 @@ public LoginPage()
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return new DashboardPage();
 		
 		
 	}
