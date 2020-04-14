@@ -13,6 +13,8 @@ import config.ConfigProperties;
 import dataprovider.MyDataProvider;
 import pages.AssignLeavePage;
 import pages.DashboardPage;
+import pages.EmployeePage;
+import pages.EportalLoginPage;
 import pages.LoginPage;
 import pages.PIMPage;
 import utility.ExcelUtility;
@@ -32,7 +34,8 @@ public class Base {
 	protected BasePage base;
 	protected AssignLeavePage assignLeave;
 	protected PIMPage pim;
-	
+	protected EportalLoginPage eportallogin;
+	protected EmployeePage emppage;
 	
 	//dp
 	
@@ -54,4 +57,5 @@ public class Base {
     protected String title;
     protected Select select;
     protected String className;
+    protected String intToStringTxt;
 }

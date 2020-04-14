@@ -1,5 +1,6 @@
 package pages;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import base.BasePage;
@@ -29,6 +30,9 @@ public class PIMPage extends BasePage implements PIMPageObjects {
 	
 	public void findEmpDetail(String name)
 	{
+		waitTillElementFound(empname);
+		System.out.println("wait over");
+		threadSleep();
 		type(empname,name);
 		pressEnter();
 		try {
@@ -41,5 +45,32 @@ public class PIMPage extends BasePage implements PIMPageObjects {
 		}
 	}
 	
+	public void addNewEmployee(String fname,String mname,String lname,String eid)
+	{
+		String filepath;
+		try {
+			filepath = prop.fetchPropertyFromFile("samplePhoto");
+		
+		clickOn(addEmpLink);
+		type(firstNameTxt,fname);
+		type(middleNameTxt,mname);
+		type(lastNameTxt,lname);
+		clear(newEmpId);
+		type(newEmpId,eid);
+		threadSleep();
+		
+			uploadFile(photoBtn, filepath);
+			className=this.getClass().getSimpleName().concat("addEmployee");
+			snap.capture(className);
+		}
+		 catch (MyException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	
-}
+	
+}}

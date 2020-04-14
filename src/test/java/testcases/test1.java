@@ -63,8 +63,19 @@ public class test1 extends Base {
 	public void PimPageTest(Map<Object,Object> map)
 	{
 		pim.navigateToPIMModule();
-		String ename=(String) map.get("empToSearch");
+		String ename=(String) map.get("emptosearch");
 		pim.findEmpDetail(ename);
 	}
 	
+	@Test(dataProvider="newEmpPimProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="PimPageTest")
+	public void newEmployeeTest(Map<Object,Object> map)
+	{
+		
+		String fname=(String) map.get("firstname");
+		String mname=(String) map.get("middlename");
+		String lname=(String) map.get("lastname");
+		String eid=(String) map.get("empid");
+		
+		pim.addNewEmployee(fname, mname, lname, eid);
+	}
 	}

@@ -33,22 +33,30 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		selectElementByVisibleText(partialDay,parDay);
 		selectElementByVisibleText(duration,dur);
 		type(comment,comm);
-		
-		try {
-			className=this.getClass().getSimpleName();
-			
-			clickOn(assignBtn);
-			res=checkElementVisible(popupOkayBtn);
-			if(res==true)
-			{
-				clickOn(popupOkayBtn);
+		threadSleep();
+		className=this.getClass().getSimpleName();
+		/*
+		 * try {
+		 * 
+		 * 
+		 * clickOn(assignBtn); 
+		 * res=checkElementVisible(popupOkayBtn); 
+		 * if(res==true) {
+		 * clickOn(popupOkayBtn);
+		 *  }
+		 */
+			try {
+				snap.capture(className);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			snap.capture(className);
-		} catch (MyException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return new PIMPage();
+			return new PIMPage();
+		} 
+
+		
+		
+		
 	}
 
-}
+

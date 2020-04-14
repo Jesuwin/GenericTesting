@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-10T08:31:29Z" name="Default suite" finished-at="2020-04-10T08:31:49Z" duration-ms="19881">
+  <suite started-at="2020-04-14T21:15:18Z" name="Suite" finished-at="2020-04-14T21:15:42Z" duration-ms="23697">
     <groups>
     </groups>
-    <test started-at="2020-04-10T08:31:29Z" name="Default test" finished-at="2020-04-10T08:31:49Z" duration-ms="19881">
+    <test started-at="2020-04-14T21:15:18Z" name="Test" finished-at="2020-04-14T21:15:42Z" duration-ms="23697">
       <class name="testcases.test1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:29Z" name="setup" finished-at="2020-04-10T08:31:33Z" duration-ms="3343" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:19Z" name="setup" finished-at="2020-04-14T21:15:22Z" duration-ms="3403" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginPageTest(java.util.Map)[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:33Z" name="loginPageTest" data-provider="Authentication" finished-at="2020-04-10T08:31:43Z" duration-ms="10244" status="PASS">
+        <test-method signature="loginPageTest(java.util.Map)[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:22Z" name="loginPageTest" data-provider="Authentication" finished-at="2020-04-14T21:15:29Z" duration-ms="6910" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,19 +22,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:43Z" name="setup" finished-at="2020-04-10T08:31:43Z" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:29Z" name="setup" finished-at="2020-04-14T21:15:29Z" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="DashBoardTest()[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:43Z" name="DashBoardTest" finished-at="2020-04-10T08:31:45Z" depends-on-methods="testcases.test1.loginPageTest" duration-ms="1777" status="PASS">
+        <test-method signature="DashBoardTest()[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:29Z" name="DashBoardTest" finished-at="2020-04-14T21:15:32Z" depends-on-methods="testcases.test1.loginPageTest" duration-ms="2407" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DashBoardTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:45Z" name="setup" finished-at="2020-04-10T08:31:45Z" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:32Z" name="setup" finished-at="2020-04-14T21:15:32Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="assignPageTest(java.util.Map)[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:45Z" name="assignPageTest" data-provider="AssignLeaveProvider" finished-at="2020-04-10T08:31:49Z" depends-on-methods="testcases.test1.DashBoardTest" duration-ms="4138" status="PASS">
+        <test-method signature="assignPageTest(java.util.Map)[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:32Z" name="assignPageTest" data-provider="AssignLeaveProvider" finished-at="2020-04-14T21:15:37Z" depends-on-methods="testcases.test1.DashBoardTest" duration-ms="5146" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -45,44 +45,37 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assignPageTest -->
-        <test-method signature="PimPageTest(java.util.Map)[pri:0, instance:testcases.test1@2dc54ad4]" started-at="2020-04-10T08:31:49Z" name="PimPageTest" data-provider="PIMProvider" finished-at="2020-04-10T08:31:49Z" depends-on-methods="testcases.test1.assignPageTest" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Data Provider public java.lang.Object[][] dataprovider.MyDataProvider.PIMProvider() returned a null value]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Data Provider public java.lang.Object[][] dataprovider.MyDataProvider.PIMProvider() returned a null value
-at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:133)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:706)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:37Z" name="setup" finished-at="2020-04-14T21:15:37Z" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="PimPageTest(java.util.Map)[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:37Z" name="PimPageTest" data-provider="PIMProvider" finished-at="2020-04-14T21:15:40Z" depends-on-methods="testcases.test1.assignPageTest" duration-ms="3002" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{emptosearch=Hannah Flores}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PimPageTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:40Z" name="setup" finished-at="2020-04-14T21:15:40Z" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="newEmployeeTest(java.util.Map)[pri:0, instance:testcases.test1@4c1909a3]" started-at="2020-04-14T21:15:40Z" name="newEmployeeTest" data-provider="newEmpPimProvider" finished-at="2020-04-14T21:15:42Z" depends-on-methods="testcases.test1.PimPageTest" duration-ms="2314" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{empid=1020.0, middlename=S, firstname=Jesuwin, lastname=Wilfred}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newEmployeeTest -->
       </class> <!-- testcases.test1 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

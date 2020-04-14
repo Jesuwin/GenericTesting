@@ -2,6 +2,8 @@ package base;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -316,5 +318,27 @@ try {
     	return element.isDisplayed();
     }
     
+    //upload file
+    protected void uploadFile(By loc, String filePath) {
+		
     
+		type(loc,filePath);
+	  
+	}
+    //type for int
+    
+   protected void typeInt(By locator,int value)
+    {
+    
+		try {
+			element = getWebElement(locator);
+			
+			 intToStringTxt=String.valueOf(value);
+    	element.sendKeys(intToStringTxt);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    
+}
 }

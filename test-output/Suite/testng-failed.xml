@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="2" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="ReportListener.ExtentReportListener"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="2" parallel="classes" name="Test(failed)">
     <classes>
       <class name="testcases.test1">
         <methods>
           <include name="assignPageTest"/>
           <include name="PimPageTest"/>
           <include name="loginPageTest"/>
+          <include name="newEmployeeTest"/>
           <include name="setup"/>
           <include name="DashBoardTest"/>
         </methods>
       </class> <!-- testcases.test1 -->
+      <class name="testcases.test2">
+        <methods>
+          <include name="navigateToSakthi"/>
+          <include name="setup"/>
+          <include name="EportalLoginPageTest"/>
+        </methods>
+      </class> <!-- testcases.test2 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

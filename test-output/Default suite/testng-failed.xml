@@ -8,6 +8,7 @@
           <include name="assignPageTest"/>
           <include name="PimPageTest"/>
           <include name="loginPageTest"/>
+          <include name="newEmployeeTest"/>
           <include name="setup"/>
           <include name="DashBoardTest"/>
         </methods>

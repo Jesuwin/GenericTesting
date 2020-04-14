@@ -19,7 +19,7 @@ public class WebDriverFactory {
 	public static  WebDriverFactory getInstance()
 	{
 		if(driver_instance==null)
-			driver_instance=new WebDriverFactory();
+		driver_instance=new WebDriverFactory();
 		
 		return driver_instance;
 	}
