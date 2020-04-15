@@ -46,20 +46,25 @@ public class BasePage extends Base{
   //Go to the specified url from property file
     protected void navigateToWebsiteOne() 
     {
-    	try {
-			driver1.get(prop.fetchPropertyFromFile("url"));
-			Thread.sleep(2000);
-		} catch (MyException | InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+			try {
+				driver1.get(prop.fetchPropertyFromFile("url"));
+			
+			
+				threadSleep();
+			} catch (MyException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
     }
     	
     	 protected void navigateToWebsiteTwo() 
-    	    {
-    	    	try {
+    	    {try {
+    	    	
     				driver1.get(prop.fetchPropertyFromFile("url2"));
-    				Thread.sleep(2000);
+    				threadSleep();
     			} catch (MyException | InterruptedException e) {
     				// TODO Auto-generated catch block
     				e.printStackTrace();
@@ -99,7 +104,8 @@ public class BasePage extends Base{
     }
     
     
-    public void clickOnUsingJs(WebElement element) {
+    public void clickOnUsingJs(By locator) {
+    	element=driver1.findElement(locator);
     	executor= (JavascriptExecutor)driver1;
     	executor.executeScript("arguments[0].click();", element);
     	}
@@ -213,14 +219,11 @@ public class BasePage extends Base{
     
     //thread sleep
     
-    protected void threadSleep()
+    protected void threadSleep() throws InterruptedException
     {
-    	try {
+    
 			Thread.sleep(THREAD_SLEEP_WAIT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
     }
     
     //Drag and drop action 

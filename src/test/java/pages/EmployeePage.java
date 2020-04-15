@@ -12,7 +12,7 @@ public class EmployeePage extends BasePage implements EmployeePageObjects {
 	public void clickSaktiLogo() throws MyException, IOException
 	{
 		clickOn(saktiLogo);
-		threadSleep();
+		
 		className=this.getClass().getSimpleName();
 		snap.capture(className);
 	}

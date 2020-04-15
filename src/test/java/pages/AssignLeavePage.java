@@ -17,12 +17,16 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 	
 	public PIMPage fillAssignLeaveForm(String empname,String type,String fdate,String tdate,String dur,String comm, String parDay)
 
-	{	waitTillElementFound(empNameTxtField);
-		type(empNameTxtField,empname);
+	{	//waitTillElementFound(empNameTxtField);
+		
+		try {
+			type(empNameTxtField,empname);
 		pressEnter();
 		selectElementByVisibleText(leaveType,type);
 		clear(fromDate);
-		threadSleep();
+		
+			threadSleep();
+		
 		type(fromDate,fdate);
 		threadSleep();
 		clear(toDate);
@@ -45,11 +49,11 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		 * clickOn(popupOkayBtn);
 		 *  }
 		 */
-			try {
+			
 				snap.capture(className);
-			} catch (IOException e) {
+			} catch (InterruptedException | IOException e1) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				e1.printStackTrace();
 			}
 			return new PIMPage();
 		} 

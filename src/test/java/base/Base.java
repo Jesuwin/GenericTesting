@@ -25,7 +25,7 @@ public class Base {
 	//times
 	public static int WEBDRIVER_WAIT_TIME=10;
 	public static int PAGELOAD_WAIT_TIME=10;
-	public static int THREAD_SLEEP_WAIT_TIME=1000;
+	public static int THREAD_SLEEP_WAIT_TIME=2000;
 	
 	
 	//pages

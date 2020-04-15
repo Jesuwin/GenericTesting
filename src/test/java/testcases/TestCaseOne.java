@@ -12,7 +12,7 @@ import pages.AssignLeavePage;
 import pages.LoginPage;
 import utility.MyException;
 
-public class test1 extends Base {
+public class TestCaseOne extends Base {
 	
 	
 	

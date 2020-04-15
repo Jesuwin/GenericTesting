@@ -29,17 +29,17 @@ public class PIMPage extends BasePage implements PIMPageObjects {
 	}
 	
 	public void findEmpDetail(String name)
-	{
+	{try {
 		waitTillElementFound(empname);
 		System.out.println("wait over");
 		threadSleep();
 		type(empname,name);
 		pressEnter();
-		try {
+		
 			clickOn(searchBtn);
 			className=this.getClass().getSimpleName();
 			snap.capture(className);
-		} catch (MyException | IOException e) {
+		} catch (MyException | IOException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -69,7 +69,10 @@ public class PIMPage extends BasePage implements PIMPageObjects {
 			} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 	
 	

@@ -1,12 +1,11 @@
-base\BasePage.class
 pageobjects\AssignLeavePageObjects.class
-testcases\test1.class
 pageobjects\LoginPageObjects.class
 dataprovider\MyDataProvider.class
-pages\AssignLeavePage.class
 pages\LoginPage.class
 pages\PIMPage.class
 pages\DashboardPage.class
 pageobjects\PIMPageObjects.class
-pageobjects\DashBoardPageObjects.class
 base\Base.class
+base\BasePage.class
+pages\AssignLeavePage.class
+pageobjects\DashBoardPageObjects.class

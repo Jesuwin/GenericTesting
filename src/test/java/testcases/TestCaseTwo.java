@@ -14,7 +14,7 @@ import pages.EportalLoginPage;
 import pages.LoginPage;
 import utility.MyException;
 
-public class test2 extends Base {
+public class TestCaseTwo extends Base {
 	
 	
 	

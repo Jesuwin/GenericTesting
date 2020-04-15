@@ -22,7 +22,7 @@ public class Snapshot {
 		stamp=new TimeStampUtility();
 	}
 	ConfigProperties prop=new ConfigProperties();
-	 public void capture(String capturename) throws IOException
+	 public synchronized void capture(String capturename) throws IOException
 	    {
 		 
 	        TakesScreenshot ts = (TakesScreenshot)driver;
