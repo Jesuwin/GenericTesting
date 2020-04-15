@@ -22,7 +22,7 @@ public LoginPage()
 	{
 		try {
 		
-			navigateToWebsite();
+			navigateToWebsiteOne();
 			waitTillElementFound(userTxtField);
 		type(userTxtField,username);
 		type(passTxtField,password);

@@ -44,7 +44,7 @@ public class BasePage extends Base{
    
  
   //Go to the specified url from property file
-    protected void navigateToWebsite() 
+    protected void navigateToWebsiteOne() 
     {
     	try {
 			driver1.get(prop.fetchPropertyFromFile("url"));
@@ -53,8 +53,17 @@ public class BasePage extends Base{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    }
     	
-    
+    	 protected void navigateToWebsiteTwo() 
+    	    {
+    	    	try {
+    				driver1.get(prop.fetchPropertyFromFile("url2"));
+    				Thread.sleep(2000);
+    			} catch (MyException | InterruptedException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
     	
     }
     

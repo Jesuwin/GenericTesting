@@ -16,7 +16,8 @@ public class EportalLoginPage extends BasePage implements EportalLoginPageObject
 	
 	public EmployeePage LoginToEportal(String emp, String password) throws MyException, IOException
 	{
-		
+		navigateToWebsiteTwo();
+		threadSleep();
 		type(empid,emp);
 		type(pass,password);
 		className=this.getClass().getSimpleName();
