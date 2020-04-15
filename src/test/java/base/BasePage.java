@@ -160,11 +160,12 @@ public class BasePage extends Base{
    {
 	   try {
 		element = getWebElement(locator);
-	} catch (MyException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	
 	   wait.until(ExpectedConditions.visibilityOf(element));
+	   } catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
    }
    
  //wait til Page Load
