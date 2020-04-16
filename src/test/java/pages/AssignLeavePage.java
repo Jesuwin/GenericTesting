@@ -34,7 +34,7 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		type(toDate,tdate);
 		rob.keyPress(KeyEvent.VK_ENTER);
 		threadSleep();
-		selectElementByVisibleText(partialDay,parDay);
+		
 		//selectElementByVisibleText(duration,dur);
 		type(comment,comm);
 		threadSleep();
