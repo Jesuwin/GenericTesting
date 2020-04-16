@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-15T06:57:26Z" name="GenericTestingSuite" finished-at="2020-04-15T06:58:01Z" duration-ms="35359">
+  <suite started-at="2020-04-15T10:48:18Z" name="GenericTestingSuite" finished-at="2020-04-15T10:48:53Z" duration-ms="35079">
     <groups>
     </groups>
-    <test started-at="2020-04-15T06:57:26Z" name="GenericTest" finished-at="2020-04-15T06:58:01Z" duration-ms="35359">
+    <test started-at="2020-04-15T10:48:18Z" name="GenericTest" finished-at="2020-04-15T10:48:53Z" duration-ms="35079">
       <class name="testcases.TestCaseOne">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:26Z" name="setup" finished-at="2020-04-15T06:57:30Z" duration-ms="3433" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:19Z" name="setup" finished-at="2020-04-15T10:48:22Z" duration-ms="3485" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:30Z" name="loginPageTest" data-provider="Authentication" finished-at="2020-04-15T06:57:38Z" duration-ms="7738" status="PASS">
+        <test-method signature="loginPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:22Z" name="loginPageTest" data-provider="Authentication" finished-at="2020-04-15T10:48:30Z" duration-ms="8149" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,19 +22,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:38Z" name="setup" finished-at="2020-04-15T06:57:38Z" duration-ms="26" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:30Z" name="setup" finished-at="2020-04-15T10:48:30Z" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="DashBoardTest()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:38Z" name="DashBoardTest" finished-at="2020-04-15T06:57:40Z" depends-on-methods="testcases.TestCaseOne.loginPageTest" duration-ms="2627" status="PASS">
+        <test-method signature="DashBoardTest()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:30Z" name="DashBoardTest" finished-at="2020-04-15T10:48:34Z" depends-on-methods="testcases.TestCaseOne.loginPageTest" duration-ms="3584" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DashBoardTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:40Z" name="setup" finished-at="2020-04-15T06:57:40Z" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:34Z" name="setup" finished-at="2020-04-15T10:48:34Z" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="assignPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:40Z" name="assignPageTest" data-provider="AssignLeaveProvider" finished-at="2020-04-15T06:57:51Z" depends-on-methods="testcases.TestCaseOne.DashBoardTest" duration-ms="10599" status="PASS">
+        <test-method signature="assignPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:34Z" name="assignPageTest" data-provider="AssignLeaveProvider" finished-at="2020-04-15T10:48:44Z" depends-on-methods="testcases.TestCaseOne.DashBoardTest" duration-ms="10266" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -45,11 +45,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assignPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:51Z" name="setup" finished-at="2020-04-15T06:57:51Z" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:44Z" name="setup" finished-at="2020-04-15T10:48:44Z" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="PimPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:51Z" name="PimPageTest" data-provider="PIMProvider" finished-at="2020-04-15T06:57:56Z" depends-on-methods="testcases.TestCaseOne.assignPageTest" duration-ms="5498" status="PASS">
+        <test-method signature="PimPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:44Z" name="PimPageTest" data-provider="PIMProvider" finished-at="2020-04-15T10:48:49Z" depends-on-methods="testcases.TestCaseOne.assignPageTest" duration-ms="4862" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,11 +60,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PimPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:56Z" name="setup" finished-at="2020-04-15T06:57:56Z" duration-ms="13" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:49Z" name="setup" finished-at="2020-04-15T10:48:49Z" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="newEmployeeTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T06:57:56Z" name="newEmployeeTest" data-provider="newEmpPimProvider" finished-at="2020-04-15T06:58:01Z" depends-on-methods="testcases.TestCaseOne.PimPageTest" duration-ms="4536" status="PASS">
+        <test-method signature="newEmployeeTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@5fbdfdcf]" started-at="2020-04-15T10:48:49Z" name="newEmployeeTest" data-provider="newEmpPimProvider" finished-at="2020-04-15T10:48:53Z" depends-on-methods="testcases.TestCaseOne.PimPageTest" duration-ms="3949" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,19 +77,19 @@
         </test-method> <!-- newEmployeeTest -->
       </class> <!-- testcases.TestCaseOne -->
       <class name="testcases.TestCaseTwo">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T06:57:26Z" name="setup" finished-at="2020-04-15T06:57:30Z" duration-ms="4036" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T10:48:18Z" name="setup" finished-at="2020-04-15T10:48:22Z" duration-ms="3882" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="EportalLoginPageTest()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T06:57:30Z" name="EportalLoginPageTest" finished-at="2020-04-15T06:57:38Z" duration-ms="7807" status="PASS">
+        <test-method signature="EportalLoginPageTest()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T10:48:22Z" name="EportalLoginPageTest" finished-at="2020-04-15T10:48:29Z" duration-ms="6322" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EportalLoginPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T06:57:38Z" name="setup" finished-at="2020-04-15T06:57:38Z" duration-ms="40" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T10:48:29Z" name="setup" finished-at="2020-04-15T10:48:29Z" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="navigateToSakthi()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T06:57:38Z" name="navigateToSakthi" finished-at="2020-04-15T06:57:38Z" depends-on-methods="testcases.TestCaseTwo.EportalLoginPageTest" duration-ms="118" status="PASS">
+        <test-method signature="navigateToSakthi()[pri:0, instance:testcases.TestCaseTwo@4efc180e]" started-at="2020-04-15T10:48:29Z" name="navigateToSakthi" finished-at="2020-04-15T10:48:29Z" depends-on-methods="testcases.TestCaseTwo.EportalLoginPageTest" duration-ms="338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToSakthi -->

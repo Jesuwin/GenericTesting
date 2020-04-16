@@ -76,6 +76,27 @@ public class TestCaseOne extends Base {
 		String lname=(String) map.get("lastname");
 		String eid=(String) map.get("empid");
 		
-		pim.addNewEmployee(fname, mname, lname, eid);
+		dirpage=pim.addNewEmployee(fname, mname, lname, eid);
 	}
+	
+	@Test(dataProvider="directoryDetails",dataProviderClass=MyDataProvider.class, dependsOnMethods="newEmployeeTest")
+	public void directoryPageTest(Map<Object,Object> map)
+	{
+		
+		String ename=(String) map.get("emptosearch");
+		
+		mpage=dirpage.searchDirectory(ename);
+	}
+	
+	@Test(dataProvider="maintenanceProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="directoryPageTest")
+	public void maintenancePageTest(Map<Object,Object> map)
+	{
+		
+		String ename=(String) map.get("emptosearch");
+		mpage.navigateTopurgeRecords();
+		mpage.reverifyUser("admin123");
+		mpage.checkVacancy(ename);
+	}
+	
+	
 	}

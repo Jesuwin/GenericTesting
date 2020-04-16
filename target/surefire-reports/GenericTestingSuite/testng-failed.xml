@@ -8,7 +8,7 @@
     <classes>
       <class name="testcases.TestCaseOne">
         <methods>
-          <include name="assignPageTest"/>
+          <include name="assignPageTest" invocation-numbers="0"/>
           <include name="loginPageTest"/>
           <include name="DashBoardTest"/>
           <include name="PimPageTest"/>

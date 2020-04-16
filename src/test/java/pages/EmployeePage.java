@@ -11,8 +11,8 @@ public class EmployeePage extends BasePage implements EmployeePageObjects {
 	
 	public void clickSaktiLogo() throws MyException, IOException
 	{
-		waitTillElementFound(saktiLogo);
-		clickOn(saktiLogo);
+//		waitTillElementFound(saktiLogo);
+//		clickOn(saktiLogo);
 		
 		className=this.getClass().getSimpleName();
 		snap.capture(className);

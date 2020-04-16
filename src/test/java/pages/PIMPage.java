@@ -1,6 +1,5 @@
 package pages;
 
-import java.awt.AWTException;
 import java.io.IOException;
 
 import base.BasePage;
@@ -45,7 +44,7 @@ public class PIMPage extends BasePage implements PIMPageObjects {
 		}
 	}
 	
-	public void addNewEmployee(String fname,String mname,String lname,String eid)
+	public DirectoryPage addNewEmployee(String fname,String mname,String lname,String eid)
 	{
 		String filepath;
 		try {
@@ -73,7 +72,9 @@ public class PIMPage extends BasePage implements PIMPageObjects {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
+		return new DirectoryPage();
 	
 	
-}}
+}
+	
+	}

@@ -293,12 +293,14 @@ try {
     }
     
     
+    
     protected void pressEnter()
     {
     	try {
 			rob=new Robot();
+			
 			rob.keyPress(KeyEvent.VK_ENTER);
-			rob.keyRelease(KeyEvent.VK_ENTER);
+			//rob.keyRelease(KeyEvent.VK_ENTER);
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

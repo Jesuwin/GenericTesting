@@ -13,9 +13,11 @@ import config.ConfigProperties;
 import dataprovider.MyDataProvider;
 import pages.AssignLeavePage;
 import pages.DashboardPage;
+import pages.DirectoryPage;
 import pages.EmployeePage;
 import pages.EportalLoginPage;
 import pages.LoginPage;
+import pages.MaintenancePage;
 import pages.PIMPage;
 import utility.ExcelUtility;
 import utility.Snapshot;
@@ -36,6 +38,8 @@ public class Base {
 	protected PIMPage pim;
 	protected EportalLoginPage eportallogin;
 	protected EmployeePage emppage;
+	protected DirectoryPage dirpage;
+	protected MaintenancePage mpage;
 	
 	//dp
 	
