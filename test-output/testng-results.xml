@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-16T02:15:33Z" name="GenericTestingSuite" finished-at="2020-04-16T02:16:10Z" duration-ms="36638">
+  <suite started-at="2020-04-16T10:42:41Z" name="GenericTestingSuite" finished-at="2020-04-16T10:43:16Z" duration-ms="35068">
     <groups>
     </groups>
-    <test started-at="2020-04-16T02:15:33Z" name="GenericTest" finished-at="2020-04-16T02:16:10Z" duration-ms="36638">
+    <test started-at="2020-04-16T10:42:41Z" name="GenericTest" finished-at="2020-04-16T10:43:16Z" duration-ms="35068">
       <class name="testcases.TestCaseOne">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:34Z" name="setup" finished-at="2020-04-16T02:15:37Z" duration-ms="3634" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:42:42Z" name="setup" finished-at="2020-04-16T10:42:45Z" duration-ms="3407" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:37Z" name="loginPageTest" data-provider="Authentication" finished-at="2020-04-16T02:15:44Z" duration-ms="7272" status="PASS">
+        <test-method signature="loginPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:42:45Z" name="loginPageTest" data-provider="Authentication" finished-at="2020-04-16T10:42:52Z" duration-ms="6697" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,34 +22,34 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:44Z" name="setup" finished-at="2020-04-16T02:15:44Z" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:42:52Z" name="setup" finished-at="2020-04-16T10:42:52Z" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="DashBoardTest()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:44Z" name="DashBoardTest" finished-at="2020-04-16T02:15:47Z" depends-on-methods="testcases.TestCaseOne.loginPageTest" duration-ms="2882" status="PASS">
+        <test-method signature="DashBoardTest()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:42:52Z" name="DashBoardTest" finished-at="2020-04-16T10:42:54Z" depends-on-methods="testcases.TestCaseOne.loginPageTest" duration-ms="2531" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DashBoardTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:47Z" name="setup" finished-at="2020-04-16T02:15:47Z" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:42:55Z" name="setup" finished-at="2020-04-16T10:42:55Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="assignPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:47Z" name="assignPageTest" data-provider="AssignLeaveProvider" finished-at="2020-04-16T02:15:56Z" depends-on-methods="testcases.TestCaseOne.DashBoardTest" duration-ms="9112" status="PASS">
+        <test-method signature="assignPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:42:55Z" name="assignPageTest" data-provider="AssignLeaveProvider" finished-at="2020-04-16T10:43:04Z" depends-on-methods="testcases.TestCaseOne.DashBoardTest" duration-ms="9049" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{empname=John Smith, duration=Full Day, leavetype=Vacation US, todate=01-06-2020, partialday=All Days, comment=Vacation, fromdate=01-05-2020}]]>
+                <![CDATA[{empname=John Smith, duration=Full Day, leavetype=FMLA US,Maternity US,Peternity US,Vacation US, todate=2020-06-01, partialday=All Days, comment=Vacation, fromdate=2020-05-01}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assignPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:57Z" name="setup" finished-at="2020-04-16T02:15:57Z" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:04Z" name="setup" finished-at="2020-04-16T10:43:04Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="PimPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:15:57Z" name="PimPageTest" data-provider="PIMProvider" finished-at="2020-04-16T02:16:01Z" depends-on-methods="testcases.TestCaseOne.assignPageTest" duration-ms="4431" status="PASS">
+        <test-method signature="PimPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:04Z" name="PimPageTest" data-provider="PIMProvider" finished-at="2020-04-16T10:43:08Z" depends-on-methods="testcases.TestCaseOne.assignPageTest" duration-ms="4412" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,11 +60,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PimPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:16:01Z" name="setup" finished-at="2020-04-16T02:16:01Z" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:08Z" name="setup" finished-at="2020-04-16T10:43:08Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="newEmployeeTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:16:01Z" name="newEmployeeTest" data-provider="newEmpPimProvider" finished-at="2020-04-16T02:16:04Z" depends-on-methods="testcases.TestCaseOne.PimPageTest" duration-ms="3321" status="PASS">
+        <test-method signature="newEmployeeTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:08Z" name="newEmployeeTest" data-provider="newEmpPimProvider" finished-at="2020-04-16T10:43:11Z" depends-on-methods="testcases.TestCaseOne.PimPageTest" duration-ms="3316" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,11 +75,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- newEmployeeTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:16:04Z" name="setup" finished-at="2020-04-16T02:16:04Z" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:11Z" name="setup" finished-at="2020-04-16T10:43:11Z" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="directoryPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:16:04Z" name="directoryPageTest" data-provider="directoryDetails" finished-at="2020-04-16T02:16:07Z" depends-on-methods="testcases.TestCaseOne.newEmployeeTest" duration-ms="2406" status="PASS">
+        <test-method signature="directoryPageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:11Z" name="directoryPageTest" data-provider="directoryDetails" finished-at="2020-04-16T10:43:14Z" depends-on-methods="testcases.TestCaseOne.newEmployeeTest" duration-ms="2335" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -90,11 +90,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- directoryPageTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:16:07Z" name="setup" finished-at="2020-04-16T02:16:07Z" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:14Z" name="setup" finished-at="2020-04-16T10:43:14Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="maintenancePageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T02:16:07Z" name="maintenancePageTest" data-provider="maintenanceProvider" finished-at="2020-04-16T02:16:10Z" depends-on-methods="testcases.TestCaseOne.directoryPageTest" duration-ms="2773" status="PASS">
+        <test-method signature="maintenancePageTest(java.util.Map)[pri:0, instance:testcases.TestCaseOne@d9345cd]" started-at="2020-04-16T10:43:14Z" name="maintenancePageTest" data-provider="maintenanceProvider" finished-at="2020-04-16T10:43:16Z" depends-on-methods="testcases.TestCaseOne.directoryPageTest" duration-ms="2699" status="PASS">
           <params>
             <param index="0">
               <value>
