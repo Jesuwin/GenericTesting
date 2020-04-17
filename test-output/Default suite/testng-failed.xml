@@ -3,16 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.test1">
+      <class name="testcases.TestCaseOne">
         <methods>
           <include name="assignPageTest"/>
-          <include name="PimPageTest"/>
+          <include name="directoryPageTest"/>
+          <include name="maintenancePageTest"/>
           <include name="loginPageTest"/>
-          <include name="newEmployeeTest"/>
-          <include name="setup"/>
+          <include name="goToPIMModule"/>
           <include name="DashBoardTest"/>
+          <include name="goToPurgeRecords"/>
+          <include name="PimPageTest" invocation-numbers="0"/>
+          <include name="navigateToLeaveReportsPage"/>
+          <include name="setup"/>
+          <include name="newEmployeeTest"/>
+          <include name="leaveReportPageTest"/>
         </methods>
-      </class> <!-- testcases.test1 -->
+      </class> <!-- testcases.TestCaseOne -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

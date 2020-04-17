@@ -33,6 +33,45 @@ public class DashboardPage extends BasePage implements DashBoardPageObjects {
 	return new AssignLeavePage();
 	}
 	
+	public void navigateToDashBoard()
+	{
+		try {
+			clickOn(dashboardLink);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void navigateToTimeSheets()
+	{
+		try {
+			clickOn(timesheetLink);
+			threadSleep();
+		} catch (MyException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void getTimeSheetforEmp(String empname)
+	{
+		clear(empnameBox);
+		try {
+			threadSleep();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		type(empnameBox,empname);
+		try {
+			clickOn(viewBtn);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 
 	
 }

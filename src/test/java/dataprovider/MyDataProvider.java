@@ -167,5 +167,25 @@ prop=new ConfigProperties();
 		}
 		return obj;
 	}
+	@DataProvider
+	public Object[][] leavereportProvider()
+	{
+		prop=new ConfigProperties();
+		try {
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "leavereport");
+			
+		
+		obj=ExcelUtility.getTableArray();
+		
+		
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return obj;
+	}
 	
 }

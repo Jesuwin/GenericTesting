@@ -58,11 +58,15 @@ public class TestCaseOne extends Base {
 		
 		pim=assignLeave.fillAssignLeaveForm(emp, leave, fromDate, toDate, duration, comm,parDay);
 	}
-	
-	@Test(dataProvider="PIMProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="assignPageTest")
-	public void PimPageTest(Map<Object,Object> map)
+	@Test(dependsOnMethods="assignPageTest")
+	public void goToPIMModule()
 	{
 		pim.navigateToPIMModule();
+	}
+	@Test(dataProvider="PIMProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="goToPIMModule")
+	public void PimPageTest(Map<Object,Object> map)
+	{
+		
 		String ename=(String) map.get("emptosearch");
 		pim.findEmpDetail(ename);
 	}
@@ -88,15 +92,51 @@ public class TestCaseOne extends Base {
 		mpage=dirpage.searchDirectory(ename);
 	}
 	
-	@Test(dataProvider="maintenanceProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="directoryPageTest")
+	@Test(dependsOnMethods="directoryPageTest")
+	public void goToPurgeRecords()
+	{
+		mpage.navigateTopurgeRecords();
+	}
+	
+	
+	@Test(dataProvider="maintenanceProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="goToPurgeRecords")
 	public void maintenancePageTest(Map<Object,Object> map)
 	{
 		
 		String ename=(String) map.get("emptosearch");
-		mpage.navigateTopurgeRecords();
+		
 		mpage.reverifyUser("admin123");
-		mpage.checkVacancy(ename);
+		leavepage=mpage.checkVacancy(ename);
+	}
+	@Test(dependsOnMethods="maintenancePageTest")
+	public void navigateToLeaveReportsPage()
+	{
+		leavepage.goTousageLink();
 	}
 	
+	@Test(dataProvider="leavereportProvider",dataProviderClass=MyDataProvider.class, dependsOnMethods="navigateToLeaveReportsPage")
+	public void leaveReportPageTest(Map<Object,Object> map)
+	{
+		
+		String generateFor=(String) map.get("generatefor");
+		String employeename=(String) map.get("employee");
+		
+		leavepage.generateReportsForEmp(generateFor, employeename);
+	}
+	
+	@Test(dependsOnMethods="leaveReportPageTest")
+	public void navigateToTimeSheetPage()
+	{
+	dashboard.navigateToDashBoard();
+		dashboard.navigateToTimeSheets();
+	}
+	
+	
+	@Test(dependsOnMethods="navigateToTimeSheetPage",dataProvider="PIMProvider",dataProviderClass=MyDataProvider.class)
+	public void getTimeSheetForEmp(Map<Object,Object> map)
+	{
+		String empname=(String) map.get("emptosearch");
+		dashboard.getTimeSheetforEmp(empname);
+	}
 	
 	}

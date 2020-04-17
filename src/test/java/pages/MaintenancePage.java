@@ -41,7 +41,7 @@ public class MaintenancePage extends BasePage implements MaintenancePageObjects{
 		}
 	}
 	
-	public void checkVacancy(String ename) 
+	public LeaveListPage checkVacancy(String ename) 
 	{try {
 		type(vacancyTxt,"HR");
 		pressEnter();
@@ -56,5 +56,6 @@ public class MaintenancePage extends BasePage implements MaintenancePageObjects{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	return new LeaveListPage();
 	}
 }

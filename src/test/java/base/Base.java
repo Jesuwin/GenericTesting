@@ -16,6 +16,7 @@ import pages.DashboardPage;
 import pages.DirectoryPage;
 import pages.EmployeePage;
 import pages.EportalLoginPage;
+import pages.LeaveListPage;
 import pages.LoginPage;
 import pages.MaintenancePage;
 import pages.PIMPage;
@@ -40,6 +41,7 @@ public class Base {
 	protected EmployeePage emppage;
 	protected DirectoryPage dirpage;
 	protected MaintenancePage mpage;
+	protected LeaveListPage leavepage;
 	
 	//dp
 	
