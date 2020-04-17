@@ -3,6 +3,8 @@ package pages;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import base.BasePage;
 import pageobjects.AssignLeavePageObjects;
 import utility.MyException;
@@ -21,6 +23,7 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		
 		try {
 			type(empNameTxtField,empname);
+			test.log(LogStatus.PASS, "Navigated to fill assignLeavePage");
 		pressEnter();
 		selectElementByVisibleText(leaveType,type);
 		clear(fromDate);
@@ -51,6 +54,7 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		 */
 			
 				snap.capture(className);
+				test.log(LogStatus.INFO, "Got a screenshot of Assign Leave form");
 			} catch (InterruptedException | IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

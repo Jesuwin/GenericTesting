@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 import config.ConfigProperties;
 import dataprovider.MyDataProvider;
 import pages.AssignLeavePage;
@@ -57,6 +60,8 @@ public class Base {
     protected Robot rob;
     protected MyDataProvider dataprov;
     protected ExcelUtility excelutil;
+    protected  ExtentTest test;
+    protected  ExtentReports report; 
     
 
     protected List<WebElement> list;

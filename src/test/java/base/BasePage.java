@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.relevantcodes.extentreports.ExtentReports;
+
 import config.ConfigProperties;
 import utility.MyException;
 import utility.Snapshot;
@@ -36,6 +38,8 @@ public class BasePage extends Base{
 			prop=new ConfigProperties();
 			snap=new Snapshot(driver1);
 			maximizeBrowser();
+			report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
+			test = report.startTest("ExtentDemo");
 			
 		} 
 	
