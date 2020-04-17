@@ -1,5 +1,7 @@
 package pages;
 
+import java.io.IOException;
+
 import base.BasePage;
 import pageobjects.LeaveListPageObjects;
 import utility.MyException;
@@ -37,8 +39,10 @@ public class LeaveListPage extends BasePage implements LeaveListPageObjects {
 		pressEnter();
 		try {
 			threadSleep();
+			className=this.getClass().getSimpleName();
+			snap.capture(className);
 			clickOn(viewBtn);
-		} catch (MyException | InterruptedException e) {
+		} catch (MyException | InterruptedException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

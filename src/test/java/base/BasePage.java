@@ -38,8 +38,7 @@ public class BasePage extends Base{
 			prop=new ConfigProperties();
 			snap=new Snapshot(driver1);
 			maximizeBrowser();
-			report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
-			test = report.startTest("ExtentDemo");
+		
 			
 		} 
 	

@@ -56,7 +56,12 @@ public class TestCaseOne extends Base {
 		String parDay=(String) map.get("partialday");
 		
 		
-		pim=assignLeave.fillAssignLeaveForm(emp, leave, fromDate, toDate, duration, comm,parDay);
+		try {
+			pim=assignLeave.fillAssignLeaveForm(emp, leave, fromDate, toDate, duration, comm,parDay);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Test(dependsOnMethods="assignPageTest")
 	public void goToPIMModule()
@@ -139,4 +144,9 @@ public class TestCaseOne extends Base {
 		dashboard.getTimeSheetforEmp(empname);
 	}
 	
+	@Test(dependsOnMethods="getTimeSheetForEmp")
+	public void LogOut()
+	{
+		dashboard.logoutFromHRM();
+	}
 	}

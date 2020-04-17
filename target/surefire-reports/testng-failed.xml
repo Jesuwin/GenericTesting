@@ -8,10 +8,10 @@
     <classes>
       <class name="testcases.TestCaseOne">
         <methods>
-          <include name="assignPageTest"/>
+          <include name="assignPageTest" invocation-numbers="0"/>
           <include name="directoryPageTest"/>
           <include name="goToPIMModule"/>
-          <include name="getTimeSheetForEmp" invocation-numbers="0"/>
+          <include name="getTimeSheetForEmp"/>
           <include name="goToPurgeRecords"/>
           <include name="PimPageTest"/>
           <include name="navigateToLeaveReportsPage"/>

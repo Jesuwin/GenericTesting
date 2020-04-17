@@ -64,6 +64,13 @@ public class DashboardPage extends BasePage implements DashBoardPageObjects {
 			e1.printStackTrace();
 		}
 		type(empnameBox,empname);
+		className=this.getClass().getSimpleName();
+		try {
+			snap.capture(className);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try {
 			clickOn(viewBtn);
 		} catch (MyException e) {
@@ -72,6 +79,16 @@ public class DashboardPage extends BasePage implements DashBoardPageObjects {
 		}
 	}
 	
-
+public void logoutFromHRM()
+{
+	try {
+		clickOn(adminLink);
+		threadSleep();
+		clickOn(logoutLink);
+	} catch (MyException | InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 	
 }

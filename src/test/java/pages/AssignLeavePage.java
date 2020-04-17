@@ -17,13 +17,13 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		super();
 	}
 	
-	public PIMPage fillAssignLeaveForm(String empname,String type,String fdate,String tdate,String dur,String comm, String parDay)
+	public PIMPage fillAssignLeaveForm(String empname,String type,String fdate,String tdate,String dur,String comm, String parDay) throws InterruptedException
 
 	{	//waitTillElementFound(empNameTxtField);
 		
 		try {
 			type(empNameTxtField,empname);
-			test.log(LogStatus.PASS, "Navigated to fill assignLeavePage");
+		
 		pressEnter();
 		selectElementByVisibleText(leaveType,type);
 		clear(fromDate);
@@ -38,7 +38,7 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		rob.keyPress(KeyEvent.VK_ENTER);
 		threadSleep();
 		
-		//selectElementByVisibleText(duration,dur);
+	selectElementByVisibleText(duration,dur);
 		type(comment,comm);
 		threadSleep();
 		className=this.getClass().getSimpleName();
@@ -54,8 +54,8 @@ public class AssignLeavePage extends BasePage implements AssignLeavePageObjects 
 		 */
 			
 				snap.capture(className);
-				test.log(LogStatus.INFO, "Got a screenshot of Assign Leave form");
-			} catch (InterruptedException | IOException e1) {
+				
+			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}

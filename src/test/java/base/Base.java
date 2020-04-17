@@ -60,8 +60,6 @@ public class Base {
     protected Robot rob;
     protected MyDataProvider dataprov;
     protected ExcelUtility excelutil;
-    protected  ExtentTest test;
-    protected  ExtentReports report; 
     
 
     protected List<WebElement> list;
